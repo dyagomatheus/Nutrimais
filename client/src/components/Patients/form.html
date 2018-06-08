@@ -1,0 +1,56 @@
+<div>
+<div class="row">
+    <div class="content-header">
+        <h4>Pacientes <small>{{ sub_title }}</small></h4>
+        <div class="grey-text">
+            <small>
+                <a href="#/">Nutrimais</a> >
+                <a href="#/contas">Seus pacientes</a> >
+                <span>editando/adicionando</span>
+            </small>
+        </div>
+    </div>
+    <div class="card col s12">
+        <div class="card-content">
+            <form class="row" autocomplete="off" @submit.prevent="save">
+                <div class="input-field col s12">
+                    <h5>Dados do Paciente</h5>
+                </div>
+                <div class="input-field col s6">
+                    <input v-model="patient.name" type="text" id="name" class="validate" placeholder="Nome completo" required>
+                    <label for="name" class="active">Nome do Paciente</label>
+                </div>
+                <div class="input-field col s6">
+                    <input v-model="patient.number_phone" type="text" id="number_phone" class="validate" placeholder="Fixo / Celular" required>
+                    <label for="title" class="active">Telefone para contato</label>
+                </div>
+                <div class="input-field col s6">
+                    <input v-model="patient.email" type="email" id="email" class="validate" placeholder="Qual o seu e-mail?" required>
+                    <label for="email" class="active">E-mail</label>
+                </div>
+                <div class="input-field col s6">
+                    <input v-model="patient.date_birth" type="date" id="date_birth" class="validate" placeholder="Qual sua data de nascimento?" required>
+                    <label for="date_birth" class="active">Data de nascimento</label>
+                </div>
+                <div class="col s6">
+                <label for="sex" class="active">Sexo</label>
+                <p>
+                      <input v-model="patient.sex" name="group1" type="radio" id="test1" value="Masculino" />
+                      <label for="test1">Masculino</label>
+                    </p>
+                    <p>
+                      <input v-model="patient.sex" name="group1" type="radio" id="test2" value="Feminio" />
+                      <label for="test2">Feminio</label>
+                    </p>
+                </div>
+                    <div class="input-field col s6">
+                    <input type="submit"class="waves-effect waves-light btn-large blue-grey darken-4" value="salvar">
+                </div>
+            </form>
+        </div>
+        <div class="card-action">
+            <a href="#/pacientes">Voltar</a>
+        </div>
+    </div>
+</div>
+</div>
